@@ -3,18 +3,22 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <div
+    <footer
       style={{
-        width: "100%",
-        height: "2.5rem",
         position: "absolute",
+        right: "0",
         bottom: "0",
-        padding: "1rem",
+        left: "0",
+        marginTop: "50px",
+        width: "100%",
+        backgroundColor: "#777",
+        padding: "10px",
         textAlign: "center",
+        color: "white",
       }}
     >
       <span>Edunomics</span>
-      <li>contact@edunomics.in</li>
+      <p>contact@edunomics.in</p>
       <span>
         <i class="facebook f icon" />
         <i class="twitter icon" />
@@ -25,7 +29,7 @@ const Footer = () => {
         <Link to="#">Terms of Use</Link> |<Link to="#">Tech</Link> |
         <Link to="#">Privacy Policy</Link>
       </div>
-    </div>
+    </footer>
   );
 };
 

@@ -6,7 +6,11 @@ import history from "../history";
 const SignInForm = (props) => {
   const { handleSubmit } = props;
 
-  if (props.submitSucceeded) history.push("/platform");
+  if (props.submitSucceeded)
+    history.push({
+      pathname: "/platform",
+      state: { loggedIn: true },
+    });
   return (
     <div style={{ width: "400px" }}>
       <form
@@ -34,9 +38,6 @@ const SignInForm = (props) => {
           Login
         </button>
       </form>
-      {/* { if(props.error==null)
-          history.push("/platform");
-        } */}
     </div>
   );
 };
@@ -48,29 +49,6 @@ const renderField = ({ input, label, type, meta: { touched, error } }) => (
     {touched && error && <span>{error}</span>}
   </div>
 );
-
-// function submit(values, props) {
-//   console.log("hello");
-//   console.log();
-
-//   if (values.EmailId !== "admin") {
-//     console.log("email");
-
-//     throw new SubmissionError({
-//       username: "wrong username",
-//       _error: "Login failed!",
-//     });
-//   } else if (values.Password !== "1234") {
-//     console.log("pass");
-//     throw new SubmissionError({
-//       password: "Wrong password",
-//       _error: "Login failed!",
-//     });
-//   } else {
-//     console.log("noerror");
-//     history.push("/platform");
-//   }
-// }
 
 const validate = (values) => {
   const errors = {};
